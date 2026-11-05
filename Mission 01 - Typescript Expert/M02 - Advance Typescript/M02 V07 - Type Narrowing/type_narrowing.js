@@ -33,5 +33,12 @@ const showDate = (value) => {
     const date = new Date(value);
     console.log(date.toISOString());
 };
+const getArea = (shape) => {
+    if (shape.kind === "circle") {
+        console.log(shape.redius);
+    }
+    else {
+        console.log(shape.sideLength);
+    }
+};
 export {};
-// Discriminated Union

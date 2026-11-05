@@ -46,3 +46,20 @@ const showDate = (value: Date | String) => {
 };
 
 // Discriminated Union
+interface ICircle {
+  kind: "circle";
+  redius: number;
+}
+
+interface ISquare {
+  kind: "square";
+  sideLength: number;
+}
+
+const getArea = (shape: ICircle | ISquare) => {
+  if (shape.kind === "circle") {
+    console.log(shape.redius);
+  } else {
+    console.log(shape.sideLength);
+  }
+};
