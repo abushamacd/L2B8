@@ -1,11 +1,10 @@
 import type { IncomingMessage, ServerResponse } from "http";
+import getProduct from "../services/product.service";
 
 const productController = (req: IncomingMessage, res: ServerResponse) => {
-  res
-    .writeHead(200, {
-      "Content-Type": "application/json",
-    })
-    .end(JSON.stringify({ message: "Product Route" }));
+  if (req.method === "GET") {
+    getProduct(req, res);
+  }
 };
 
 export default productController;
